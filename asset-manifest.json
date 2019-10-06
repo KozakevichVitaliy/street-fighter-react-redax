@@ -1,15 +1,21 @@
 {
   "files": {
     "main.css": "/street-fighter-react-redax/static/css/main.876f54b6.chunk.css",
-    "main.js": "/street-fighter-react-redax/static/js/main.b805af5c.chunk.js",
-    "main.js.map": "/street-fighter-react-redax/static/js/main.b805af5c.chunk.js.map",
-    "runtime-main.js": "/street-fighter-react-redax/static/js/runtime-main.6ddeaf5b.js",
-    "runtime-main.js.map": "/street-fighter-react-redax/static/js/runtime-main.6ddeaf5b.js.map",
-    "static/js/2.5b4da38b.chunk.js": "/street-fighter-react-redax/static/js/2.5b4da38b.chunk.js",
-    "static/js/2.5b4da38b.chunk.js.map": "/street-fighter-react-redax/static/js/2.5b4da38b.chunk.js.map",
+    "main.js": "/street-fighter-react-redax/static/js/main.23928d6a.chunk.js",
+    "main.js.map": "/street-fighter-react-redax/static/js/main.23928d6a.chunk.js.map",
+    "runtime-main.js": "/street-fighter-react-redax/static/js/runtime-main.b14677b1.js",
+    "runtime-main.js.map": "/street-fighter-react-redax/static/js/runtime-main.b14677b1.js.map",
+    "static/js/2.58449e55.chunk.js": "/street-fighter-react-redax/static/js/2.58449e55.chunk.js",
+    "static/js/2.58449e55.chunk.js.map": "/street-fighter-react-redax/static/js/2.58449e55.chunk.js.map",
     "index.html": "/street-fighter-react-redax/index.html",
-    "precache-manifest.7d1b0ab1c6a857a026fd03d2ab8e6ce1.js": "/street-fighter-react-redax/precache-manifest.7d1b0ab1c6a857a026fd03d2ab8e6ce1.js",
+    "precache-manifest.f78e3b6015f68dbda5a007de06c3d06a.js": "/street-fighter-react-redax/precache-manifest.f78e3b6015f68dbda5a007de06c3d06a.js",
     "service-worker.js": "/street-fighter-react-redax/service-worker.js",
     "static/css/main.876f54b6.chunk.css.map": "/street-fighter-react-redax/static/css/main.876f54b6.chunk.css.map"
-  }
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b14677b1.js",
+    "static/js/2.58449e55.chunk.js",
+    "static/css/main.876f54b6.chunk.css",
+    "static/js/main.23928d6a.chunk.js"
+  ]
 }
