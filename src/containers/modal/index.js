@@ -58,7 +58,7 @@ export default class Dialog extends Component {
                             </div>
                           </div>
                         </div>
-                        <button onClick={() => this.closeModal()}>Close</button>
+                        <button  onClick={() => this.closeModal()}>Close</button>
                     </div>
                 </Modal>
             </div>
