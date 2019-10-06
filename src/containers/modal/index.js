@@ -6,7 +6,7 @@ const Dialog = () => {
   const { isShowing, toggle } = useModal();
 
   return (
-    <div className="App">
+    <div>
       <button className="button-default" onClick={toggle}>
         Show Modal
       </button>
