@@ -28,7 +28,14 @@ class Fighters extends Component {
   render() {
     const { fighters } = this.props;
 
-    return <div className="fighters">{fighters.map(this.renderFighter)}</div>;
+    return (
+      <div>
+        <button id="startBtn" disabled>Start Game</button>
+        <div className="fighters">
+          {fighters.map(this.renderFighter)}
+        </div>
+      </div>
+      );
   }
 }
 

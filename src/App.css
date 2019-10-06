@@ -4,6 +4,7 @@ body {
     width: 100%;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 #root {
@@ -46,16 +47,37 @@ body {
     height: 260px;
 }
 
-#loading-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    background: rgba(255, 255, 255, 0.7);
-    visibility: hidden;
+.showModal-btn {
+    margin-top: 5px;
+    text-align: center;
 }
+.showModal-btn input {
+    background-color: #2BC1F2;
+    width: 85px;
+    height: 30px;
+    border-radius: 5px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: 'Ubuntu', sans-serif;
+}
+.fighter-info {
+    display: flex;
+    justify-content: space-between;
+}
+.values {
+    display: inline-block;
+}
+#startBtn {
+    width: 20%;
+    margin: 0 auto;
+    margin-top: 30px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 700;
+    background-color: #2BC1F2;
+    cursor: pointer;
+    font-family: 'Ubuntu', sans-serif;
+    display: block;
+}
+

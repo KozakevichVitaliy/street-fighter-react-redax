@@ -1,18 +1,67 @@
-import React from "react";
-import Modal from "./Modal";
-import useModal from "./useModal";
+import React, { Component } from 'react';
+import Modal from 'react-awesome-modal';
 
-const Dialog = () => {
-  const { isShowing, toggle } = useModal();
+export default class Dialog extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            visible : false
+        }
+    }
 
-  return (
-    <div>
-      <button className="button-default" onClick={toggle}>
-        Show Modal
-      </button>
-      <Modal isShowing={isShowing} hide={toggle} />
-    </div>
-  );
-};
+    openModal() {
+        this.setState({
+            visible : true
+        });
+    }
 
-export default Dialog;
+    closeModal() {
+        this.setState({
+            visible : false
+        });
+    }
+
+    render() {
+        return (
+            <div className="showModal-btn">
+                <input type="button" value="Fighter info" onClick={() => this.openModal()} />
+                <Modal visible={this.state.visible} width="400" height="300" effect="fadeInUp" onClickAway={() => this.closeModal()}>
+                    <div>
+                        <h1>Title</h1>
+                        <div className="fighter-info">
+                          <div className="values">
+                            <div>
+                              <span>dfsdfds</span>
+                              <span>dfsdfds</span>
+                            </div>
+                            <div>
+                              <span>dfsdfds</span>
+                              <span>dfsdfds</span>
+                            </div>
+                            <div>
+                              <span>dfsdfds</span>
+                              <span>dfsdfds</span>
+                            </div>
+                          </div>
+                          <div className="values">
+                            <div>
+                              <span>dfsdfds</span>
+                              <span>dfsdfds</span>
+                            </div>
+                            <div>
+                              <span>dfsdfds</span>
+                              <span>dfsdfds</span>
+                            </div>
+                            <div>
+                              <span>dfsdfds</span>
+                              <span>dfsdfds</span>
+                            </div>
+                          </div>
+                        </div>
+                        <button onClick={() => this.closeModal()}>Close</button>
+                    </div>
+                </Modal>
+            </div>
+        );
+    }
+}
