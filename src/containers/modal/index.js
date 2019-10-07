@@ -10,6 +10,7 @@ export default class Dialog extends Component {
     }
 
     openModal() {
+        console.log(this.props.fighter)
         this.setState({
             visible : true
         });
