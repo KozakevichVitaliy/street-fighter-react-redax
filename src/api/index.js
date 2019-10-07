@@ -1,4 +1,4 @@
-import { callApi } from 'api/apiHelper'
+import { callApi } from './apiHelper'
 
 export const fetchFighters = async () => {
   try {

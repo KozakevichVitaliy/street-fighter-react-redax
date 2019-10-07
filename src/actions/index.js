@@ -2,10 +2,10 @@ import {
   FETCH_FIGHTERS_START,
   FETCH_FIGHTERS_SUCCESS,
   FETCH_FIGHTERS_FAILURE
-} from 'actionTypes'
+} from '../actionTypes'
 import {
   fetchFighters as fetchFightersApi
-} from 'api'
+} from '../api'
 
 
 export const fetchFighters = () => async dispatch => {
