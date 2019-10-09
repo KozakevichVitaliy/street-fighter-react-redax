@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 
 import { fetchFighters } from "../../actions";
 import { getFighters } from "../../selectors";
-import Dialog from "../modal";
+// import Dialog from "../modal";
 
 class Fighters extends Component {
   componentDidMount() {
@@ -21,7 +21,7 @@ class Fighters extends Component {
         />
         <span className="name">{fighter.name}</span>
 
-        <Dialog />
+        {/* <Dialog /> */}
       </div>
     );
   }

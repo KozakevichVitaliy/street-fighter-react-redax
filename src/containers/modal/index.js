@@ -1,12 +1,19 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 import Modal from 'react-awesome-modal';
 
-export default class Dialog extends Component {
+import { fetchFighterById } from '../../actions'
+
+class Dialog extends Component {
     constructor(props) {
         super(props);
         this.state = {
             visible : false
         }
+    }
+
+    componentDidMount(){
+      fetchFighterById(this.props.params.id)
     }
 
     openModal() {
@@ -65,3 +72,10 @@ export default class Dialog extends Component {
         );
     }
 }
+
+
+const mapDispatchToProps = {
+  fetchFighterById
+}
+
+export default connect(null, mapDispatchToProps)(Dialog)
