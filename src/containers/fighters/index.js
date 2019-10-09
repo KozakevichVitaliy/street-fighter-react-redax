@@ -21,7 +21,8 @@ class Fighters extends Component {
         />
         <span className="name">{fighter.name}</span>
 
-        <Dialog fighter={fighter}/>
+        <Dialog fighter_id={fighter._id}/>
+
       </div>
     );
   }

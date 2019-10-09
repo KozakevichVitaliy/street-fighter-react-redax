@@ -13,6 +13,7 @@ import reducers from "./reducers";
 import Layout from "./containers/layout";
 import Fighters from "./containers/fighters";
 
+
 const store = createStore(
   reducers,
   composeWithDevTools(applyMiddleware(thunk))

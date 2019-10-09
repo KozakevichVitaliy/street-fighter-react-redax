@@ -10,3 +10,4 @@ export const getFighters = state => {
   );
   return fighters;
 };
+

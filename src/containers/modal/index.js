@@ -1,26 +1,30 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux'
 import Modal from 'react-awesome-modal';
 
-export default class Dialog extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            visible : false
-        }
-    }
+import { fetchFighterById } from '../../actions'
 
-    openModal() {
-        console.log(this.props.fighter)
-        this.setState({
-            visible : true
-        });
+class Dialog extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+        visible : false
     }
+}
+  componentDidMount() {
+    this.props.fetchFighterById(this.props.fighter_id);
+  }
+  openModal() {
+    this.setState({
+        visible : true
+    });
+  }
 
-    closeModal() {
-        this.setState({
-            visible : false
-        });
-    }
+  closeModal() {
+    this.setState({
+        visible : false
+    });
+  }
 
     render() {
         return (
@@ -66,3 +70,13 @@ export default class Dialog extends Component {
         );
     }
 }
+
+
+const mapStateToProps = state => ({
+  fighter: state.dialog
+});
+
+const mapDispatchToProps = {
+  fetchFighterById
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Dialog)
