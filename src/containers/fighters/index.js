@@ -1,18 +1,21 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import { fetchFighters } from "../../actions";
+import { fetchFighters, fetchFighterById } from "../../actions";
 import { getFighters } from "../../selectors";
-import Dialog from "../modal";
+// import Dialog from "../modal";
 
 class Fighters extends Component {
   componentDidMount() {
+    console.log(this.props)
     this.props.fetchFighters();
   }
-  renderFighter(fighter, index) {
+  
+  renderFighter(callback, fighter, index) {
     return (
       // index as a key is an anti-pattern espessialy when you have stable IDs
       // https://reactjs.org/docs/lists-and-keys.html
+      
       <div className="fighter" key={index}>
         <img
           className="fighter-image"
@@ -20,20 +23,24 @@ class Fighters extends Component {
           alt={fighter.source}
         />
         <span className="name">{fighter.name}</span>
-
-        <Dialog fighter_id={fighter._id}/>
+        <input 
+          className="showModal-btn" 
+          type="button" 
+          value="Fighter info" 
+          onClick={() => callback(fighter._id)} 
+        />
+        {/* <Dialog fighter_id={fighter._id}/> */}
 
       </div>
     );
   }
   render() {
-    const { fighters } = this.props;
-
+    const { fighters, fetchFighterById} = this.props;
     return (
       <div>
         <button id="startBtn" disabled>Start Game</button>
         <div className="fighters">
-          {fighters.map(this.renderFighter)}
+          {fighters.map(this.renderFighter.bind(null, fetchFighterById))}
         </div>
       </div>
       );
@@ -45,7 +52,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = {
-  fetchFighters
+  fetchFighters,
+  fetchFighterById
 };
 
 export default connect(

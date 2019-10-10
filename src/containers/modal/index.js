@@ -11,9 +11,6 @@ class Dialog extends Component {
         visible : false
     }
 }
-  componentDidMount() {
-    this.props.fetchFighterById(this.props.fighter_id);
-  }
   openModal() {
     this.setState({
         visible : true
@@ -28,7 +25,7 @@ class Dialog extends Component {
 
     render() {
         return (
-            <div className="showModal-btn">
+            <div>
                 <input type="button" value="Fighter info" onClick={() => this.openModal()} />
                 <Modal visible={this.state.visible} width="400" height="300" effect="fadeInUp" onClickAway={() => this.closeModal()}>
                     <div>

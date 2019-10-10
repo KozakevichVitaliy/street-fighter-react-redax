@@ -46,12 +46,9 @@ body {
 .fighter-image {
     height: 260px;
 }
-
 .showModal-btn {
+    align-self: center;
     margin-top: 5px;
-    text-align: center;
-}
-.showModal-btn input {
     background-color: #2BC1F2;
     width: 85px;
     height: 30px;
