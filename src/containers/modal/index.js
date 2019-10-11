@@ -2,15 +2,14 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import Modal from 'react-awesome-modal';
 
-import { fetchFighterById } from '../../actions'
 
 class Dialog extends Component {
   constructor(props) {
-    super(props);
+    super();
     this.state = {
         visible : false
     }
-}
+  }
   openModal() {
     this.setState({
         visible : true
@@ -73,7 +72,5 @@ const mapStateToProps = state => ({
   fighter: state.dialog
 });
 
-const mapDispatchToProps = {
-  fetchFighterById
-};
-export default connect(mapStateToProps, mapDispatchToProps)(Dialog)
+
+export default connect(mapStateToProps, null)(Dialog)

@@ -38,7 +38,7 @@ export const fetchFighterById = id => async dispatch => {
     const fighter = await fetchFighterByIdApi(id)
     dispatch({
       type: FETCH_FIGHTER_BY_ID_SUCCESS,
-      payload: [fighter]
+      payload: fighter
     })
   } catch (err) {
     dispatch({

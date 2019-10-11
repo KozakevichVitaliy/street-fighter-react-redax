@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+// import Modal from 'react-awesome-modal';
 
 import { fetchFighters, fetchFighterById } from "../../actions";
 import { getFighters } from "../../selectors";
@@ -7,11 +8,10 @@ import { getFighters } from "../../selectors";
 
 class Fighters extends Component {
   componentDidMount() {
-    console.log(this.props)
     this.props.fetchFighters();
   }
   
-  renderFighter(callback, fighter, index) {
+  renderFighter(fetchFighterById, fighter, index) {
     return (
       // index as a key is an anti-pattern espessialy when you have stable IDs
       // https://reactjs.org/docs/lists-and-keys.html
@@ -27,10 +27,8 @@ class Fighters extends Component {
           className="showModal-btn" 
           type="button" 
           value="Fighter info" 
-          onClick={() => callback(fighter._id)} 
+          onClick={() => fetchFighterById(fighter._id)} 
         />
-        {/* <Dialog fighter_id={fighter._id}/> */}
-
       </div>
     );
   }
@@ -40,7 +38,7 @@ class Fighters extends Component {
       <div>
         <button id="startBtn" disabled>Start Game</button>
         <div className="fighters">
-          {fighters.map(this.renderFighter.bind(null, fetchFighterById))}
+          {fighters.map(this.renderFighter.bind(this, fetchFighterById))}
         </div>
       </div>
       );
