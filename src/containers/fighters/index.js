@@ -25,7 +25,6 @@ class Fighters extends Component {
   }
 
   closeModal(that) {
-    console.log(that.props.fighter)
     const { dialog } = that.props
     that.setState({
         visible : dialog
