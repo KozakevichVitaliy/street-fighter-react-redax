@@ -59,10 +59,11 @@ body {
 }
 .fighter-info {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    font-family: 'Ubuntu', sans-serif;
 }
 .values {
-    display: inline-block;
+    display: block;
 }
 #startBtn {
     width: 20%;

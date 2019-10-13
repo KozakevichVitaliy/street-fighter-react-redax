@@ -8,8 +8,8 @@ import {
 
 } from '../actionTypes'
 import {
-  fetchFighters as fetchFightersApi,
-  fetchFighterByIdApi
+  fetchFighters as fetchFightersApi
+  // fetchFighterByIdApi
 } from '../api'
 
 
@@ -35,10 +35,10 @@ export const fetchFighterById = id => async dispatch => {
   dispatch({type: FETCH_FIGHTER_BY_ID_START})
 
   try {
-    const fighter = await fetchFighterByIdApi(id)
+    // const fighter = await fetchFighterByIdApi(id)
     dispatch({
       type: FETCH_FIGHTER_BY_ID_SUCCESS,
-      payload: fighter
+      payload: id
     })
   } catch (err) {
     dispatch({
