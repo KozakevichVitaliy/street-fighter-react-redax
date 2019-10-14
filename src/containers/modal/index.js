@@ -4,7 +4,7 @@ import Modal from 'react-awesome-modal';
 
 
 class Dialog extends Component {
-  constructor(props) {
+  constructor() {
     super();
     this.state = {
         visible : false
