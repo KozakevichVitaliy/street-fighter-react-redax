@@ -10,26 +10,46 @@ class Fighters extends Component {
   constructor(props) {
     super();
     this.state = {
-        visible : props.dialog
+        visible : props.dialog,
+        arenaControl: []
     }
   }
   componentDidMount() {
     this.props.fetchFighters();
   }
   openModal(that, fighterId, fetchFighterById) {
-    const { dialog } = that.props
     fetchFighterById(fighterId);
     that.setState({
-        visible : !dialog
+        visible : !that.state.dialog
     });
   }
 
   closeModal(that) {
-    const { dialog } = that.props
     that.setState({
-        visible : dialog
+        visible : that.state.dialog
     });
   }
+
+  fighterToArena(closeModal, that){
+    if (that.state.arenaControl.length < 1) {
+      that.setState({
+        arenaControl :  [...that.state.arenaControl, 1]
+      });
+      console.log(that.state.arenaControl)
+    } else if (that.state.arenaControl.length === 1) {
+      console.log(that.state.arenaControl)
+      that.setState({
+        arenaControl :  [...that.state.arenaControl, 2]
+      });
+      console.log(that.state.arenaControl)
+      that.startGameBtn.disabled = false;
+    } else {
+      console.log(that.state.arenaControl)
+      alert('You cannot add third fighter\nPlease start the game');
+    }
+    closeModal(that)
+  }
+
   renderFighter(fetchFighterById, openModal, fighter) {
     const that = this;
     return (
@@ -57,7 +77,7 @@ class Fighters extends Component {
     const that = this;
     return (
       <div>
-        <button id="startBtn" disabled>Start Game</button>
+        <button id="startBtn" ref={(button) => { that.startGameBtn = button}} disabled>Start Game</button>
         <div className="fighters">
           {fighters.map(this.renderFighter.bind(this, fetchFighterById, this.openModal))}
           <Modal 
@@ -67,7 +87,7 @@ class Fighters extends Component {
             onClickAway={() => this.closeModal(that)}
           >
             <Dialog 
-              closeModal={this.closeModal} 
+              closeModal={() => {this.fighterToArena(this.closeModal, that)}} 
               that={this}
               fighter={fighter || {}}
             />
