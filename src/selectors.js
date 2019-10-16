@@ -20,3 +20,11 @@ export const getFighter = state => {
   );
   return fighter;
 };
+
+export const getFightersInArena = state => {
+  const fighters = R.map(
+    id => getFighterById(state, id),
+    state.arena.ids
+  );
+  return fighters;
+};

@@ -4,7 +4,10 @@ import {
   FETCH_FIGHTERS_FAILURE,
   GET_FIGHTER_BY_ID_START,
   GET_FIGHTER_BY_ID_SUCCESS,
-  GET_FIGHTER_BY_ID_FAILURE
+  GET_FIGHTER_BY_ID_FAILURE,
+  PUSH_FIGHTER_ID_TO_ARENA_START,
+  PUSH_FIGHTER_ID_TO_ARENA_SUCCESS,
+  PUSH_FIGHTER_ID_TO_ARENA_FAILURE
 
 } from '../actionTypes'
 import {
@@ -43,6 +46,24 @@ export const getFighterById = id => dispatch => {
   } catch (err) {
     dispatch({
       type: GET_FIGHTER_BY_ID_FAILURE,
+      payload: err,
+      error: true
+    })
+  }
+}
+
+export const pushFighterById = id => dispatch => {
+  dispatch({type: PUSH_FIGHTER_ID_TO_ARENA_START})
+
+  try {
+    // const fighter = await fetchFighterByIdApi(id)
+    dispatch({
+      type: PUSH_FIGHTER_ID_TO_ARENA_SUCCESS,
+      payload: id
+    })
+  } catch (err) {
+    dispatch({
+      type: PUSH_FIGHTER_ID_TO_ARENA_FAILURE,
       payload: err,
       error: true
     })

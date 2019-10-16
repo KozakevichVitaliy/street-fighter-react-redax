@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import Modal from 'react-awesome-modal';
 import { Link } from 'react-router'
 
-import { fetchFighters, getFighterById } from "../../actions";
+import { fetchFighters, getFighterById, pushFighterById } from "../../actions";
 import { getFighters, getFighter } from "../../selectors";
 import Dialog from "../modal";
 
@@ -31,15 +31,17 @@ class Fighters extends Component {
     });
   }
 
-  fighterToArena(closeModal, that){
+  fighterToArena(closeModal, that, fighterId, pushFighterById){
     if (that.state.arenaControl.length < 1) {
       that.setState({
-        arenaControl :  [...that.state.arenaControl, 1]
+        arenaControl :  [...that.state.arenaControl, fighterId]
       });
+      pushFighterById(fighterId)
     } else if (that.state.arenaControl.length === 1) {
       that.setState({
-        arenaControl :  [...that.state.arenaControl, 2]
+        arenaControl :  [...that.state.arenaControl, fighterId]
       });
+      pushFighterById(fighterId)
       that.startGameBtn.disabled = false;
     } else {
       console.log(that.state.arenaControl)
@@ -71,7 +73,7 @@ class Fighters extends Component {
     );
   }
   render() {
-    const { fighters, getFighterById, fighter} = this.props;
+    const { fighters, getFighterById, fighter, pushFighterById} = this.props;
     const that = this;
     return (
       <div>
@@ -95,7 +97,7 @@ class Fighters extends Component {
             onClickAway={() => this.closeModal(that)}
           >
             <Dialog 
-              closeModal={() => {this.fighterToArena(this.closeModal, that, fighter._id)}} 
+              closeModal={() => {this.fighterToArena(this.closeModal, that, fighter._id, pushFighterById)}} 
               that={this}
               fighter={fighter || {}}
             />
@@ -114,7 +116,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = {
   fetchFighters,
-  getFighterById
+  getFighterById,
+  pushFighterById
 };
 
 export default connect(
