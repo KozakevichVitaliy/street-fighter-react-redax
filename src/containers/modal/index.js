@@ -28,7 +28,7 @@ const  Dialog = ({closeModal, that, fighter}) => {
               </div>
             </div>
           </div>
-          <button  onClick={() => closeModal(that)}>Close</button>
+          <button  onClick={() => closeModal(that)}>Choose {fighter.name}</button>
       </div>
     )
 };

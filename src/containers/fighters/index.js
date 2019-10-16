@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Modal from 'react-awesome-modal';
+import { Link } from 'react-router'
 
-import { fetchFighters, fetchFighterById } from "../../actions";
+import { fetchFighters, getFighterById } from "../../actions";
 import { getFighters, getFighter } from "../../selectors";
 import Dialog from "../modal";
 
@@ -35,13 +36,10 @@ class Fighters extends Component {
       that.setState({
         arenaControl :  [...that.state.arenaControl, 1]
       });
-      console.log(that.state.arenaControl)
     } else if (that.state.arenaControl.length === 1) {
-      console.log(that.state.arenaControl)
       that.setState({
         arenaControl :  [...that.state.arenaControl, 2]
       });
-      console.log(that.state.arenaControl)
       that.startGameBtn.disabled = false;
     } else {
       console.log(that.state.arenaControl)
@@ -50,7 +48,7 @@ class Fighters extends Component {
     closeModal(that)
   }
 
-  renderFighter(fetchFighterById, openModal, fighter) {
+  renderFighter(getFighterById, openModal, fighter) {
     const that = this;
     return (
       // index as a key is an anti-pattern espessialy when you have stable IDs
@@ -67,19 +65,29 @@ class Fighters extends Component {
           className="showModal-btn" 
           type="button" 
           value="Fighter info" 
-          onClick={() => openModal(that, fighter._id, fetchFighterById)} 
+          onClick={() => openModal(that, fighter._id, getFighterById)} 
         />
       </div>
     );
   }
   render() {
-    const { fighters, fetchFighterById, fighter} = this.props;
+    const { fighters, getFighterById, fighter} = this.props;
     const that = this;
     return (
       <div>
-        <button id="startBtn" ref={(button) => { that.startGameBtn = button}} disabled>Start Game</button>
+        <div className="startGame">
+          <Link to={`/arena`}>
+            <button 
+              className="startGameBtn"  
+              ref={(button) => { that.startGameBtn = button}} 
+              disabled
+            >
+              Start Fight
+            </button>
+          </Link>
+        </div>
         <div className="fighters">
-          {fighters.map(this.renderFighter.bind(this, fetchFighterById, this.openModal))}
+          {fighters.map(this.renderFighter.bind(this, getFighterById, this.openModal))}
           <Modal 
             visible={this.state.visible} 
             width="400" height="300" 
@@ -87,7 +95,7 @@ class Fighters extends Component {
             onClickAway={() => this.closeModal(that)}
           >
             <Dialog 
-              closeModal={() => {this.fighterToArena(this.closeModal, that)}} 
+              closeModal={() => {this.fighterToArena(this.closeModal, that, fighter._id)}} 
               that={this}
               fighter={fighter || {}}
             />
@@ -101,12 +109,12 @@ class Fighters extends Component {
 const mapStateToProps = state => ({
   fighters: getFighters(state),
   fighter: getFighter(state),
-  dialog: state.dialogFighter.visible
+  dialog: state.dialogFighter.isOpen
 });
 
 const mapDispatchToProps = {
   fetchFighters,
-  fetchFighterById
+  getFighterById
 };
 
 export default connect(

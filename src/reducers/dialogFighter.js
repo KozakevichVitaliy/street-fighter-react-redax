@@ -1,15 +1,14 @@
 import R from "ramda";
 
-import { FETCH_FIGHTER_BY_ID_SUCCESS  } from "../actionTypes";
+import { GET_FIGHTER_BY_ID_SUCCESS  } from "../actionTypes";
 
 const initialState = {
-  visible: false
+  isOpen: false
 };
 
 export default (state = initialState, { type, payload }) => {
   switch (type) {
-    case FETCH_FIGHTER_BY_ID_SUCCESS:
-      // const fighter = R.indexBy(R.prop("_id"), payload);
+    case GET_FIGHTER_BY_ID_SUCCESS:
       // return  R.merge(state, R.indexBy(R.prop("_id"), payload));
       return R.merge(state, payload)
     default:

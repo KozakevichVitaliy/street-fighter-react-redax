@@ -2,9 +2,9 @@ import {
   FETCH_FIGHTERS_START,
   FETCH_FIGHTERS_SUCCESS,
   FETCH_FIGHTERS_FAILURE,
-  FETCH_FIGHTER_BY_ID_START,
-  FETCH_FIGHTER_BY_ID_SUCCESS,
-  FETCH_FIGHTER_BY_ID_FAILURE
+  GET_FIGHTER_BY_ID_START,
+  GET_FIGHTER_BY_ID_SUCCESS,
+  GET_FIGHTER_BY_ID_FAILURE
 
 } from '../actionTypes'
 import {
@@ -31,18 +31,18 @@ export const fetchFighters = () => async dispatch => {
   }
 }
 
-export const fetchFighterById = id => async dispatch => {
-  dispatch({type: FETCH_FIGHTER_BY_ID_START})
+export const getFighterById = id => dispatch => {
+  dispatch({type: GET_FIGHTER_BY_ID_START})
 
   try {
     // const fighter = await fetchFighterByIdApi(id)
     dispatch({
-      type: FETCH_FIGHTER_BY_ID_SUCCESS,
+      type: GET_FIGHTER_BY_ID_SUCCESS,
       payload: id
     })
   } catch (err) {
     dispatch({
-      type: FETCH_FIGHTER_BY_ID_FAILURE,
+      type: GET_FIGHTER_BY_ID_FAILURE,
       payload: err,
       error: true
     })
