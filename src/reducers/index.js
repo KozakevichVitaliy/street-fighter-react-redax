@@ -3,11 +3,11 @@ import { routerReducer } from 'react-router-redux'
 
 import fighters from './fighters'
 import fightersPage from './fightersPage'
-import dialog from './dialog'
+import dialogFighter from './dialogFighter'
 
 export default combineReducers({
   routing: routerReducer,
   fighters,
   fightersPage,
-  dialog
+  dialogFighter
 })
