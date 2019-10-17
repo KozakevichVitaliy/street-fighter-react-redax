@@ -10,3 +10,21 @@ export const getFighters = state => {
   );
   return fighters;
 };
+
+export const getFighter = state => {
+  const fighter = R.prop(
+    state.dialogFighter[0],
+    // id => getFighterById(state, id),
+    state.fighters
+    // id => R.find(R.propEq('_id', id), state.fighters)
+  );
+  return fighter;
+};
+
+export const getFightersInArena = state => {
+  const fighters = R.map(
+    id => getFighterById(state, id),
+    state.arena.ids
+  );
+  return fighters;
+};

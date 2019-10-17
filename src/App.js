@@ -12,6 +12,8 @@ import { Router, Route } from "react-router";
 import reducers from "./reducers";
 import Layout from "./containers/layout";
 import Fighters from "./containers/fighters";
+import Arena from "./containers/arena";
+
 
 const store = createStore(
   reducers,
@@ -27,6 +29,7 @@ function App() {
         <Route component={Layout}>
           <Route path="/" component={Fighters} />
         </Route>
+        <Route path="/arena" component={Arena} />
       </Router>
     </Provider>
   );

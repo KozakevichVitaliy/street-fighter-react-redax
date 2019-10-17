@@ -1,68 +1,36 @@
-import React, { Component } from 'react';
-import Modal from 'react-awesome-modal';
+import React from 'react';
 
-export default class Dialog extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            visible : false
-        }
-    }
+// import reducers from "../../reducers";
+// import { fetchFighterById } from "../../actions";
+// import { getFighter } from "../../selectors";
 
-    openModal() {
-        console.log(this.props.fighter)
-        this.setState({
-            visible : true
-        });
-    }
+// const initialState = {};
 
-    closeModal() {
-        this.setState({
-            visible : false
-        });
-    }
 
-    render() {
-        return (
-            <div className="showModal-btn">
-                <input type="button" value="Fighter info" onClick={() => this.openModal()} />
-                <Modal visible={this.state.visible} width="400" height="300" effect="fadeInUp" onClickAway={() => this.closeModal()}>
-                    <div>
-                        <h1>Title</h1>
-                        <div className="fighter-info">
-                          <div className="values">
-                            <div>
-                              <span>dfsdfds</span>
-                              <span>dfsdfds</span>
-                            </div>
-                            <div>
-                              <span>dfsdfds</span>
-                              <span>dfsdfds</span>
-                            </div>
-                            <div>
-                              <span>dfsdfds</span>
-                              <span>dfsdfds</span>
-                            </div>
-                          </div>
-                          <div className="values">
-                            <div>
-                              <span>dfsdfds</span>
-                              <span>dfsdfds</span>
-                            </div>
-                            <div>
-                              <span>dfsdfds</span>
-                              <span>dfsdfds</span>
-                            </div>
-                            <div>
-                              <span>dfsdfds</span>
-                              <span>dfsdfds</span>
-                            </div>
-                          </div>
-                        </div>
-                        <button  onClick={() => this.closeModal()}>Close</button>
-                    </div>
-                </Modal>
+const  Dialog = ({closeModal, that, fighter}) => {
+    return (
+      <div className="fighter-info">
+          <h1>{fighter.name || "default"}</h1>
+          <hr />
+          <div className="fighter-stats">
+            <div className="values">
+              <div>
+                <span>Health</span>
+                <span>{fighter.health || "default"}</span>
+              </div>
+              <div>
+                <span>Attack</span>
+                <span>{fighter.attack || "default"}</span>
+              </div>
+              <div>
+                <span>Defence</span>
+                <span>{fighter.defense || "default"}</span>
+              </div>
             </div>
-        );
-    }
-}
+          </div>
+          <button  onClick={() => closeModal(that)}>Choose {fighter.name}</button>
+      </div>
+    )
+};
+
+  export default Dialog
