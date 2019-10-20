@@ -27,7 +27,7 @@ function App() {
     <Provider store={store}>
       <Router history={history}>
         <Route component={Layout}>
-          <Route path="/" component={Fighters} />
+          <Route path={process.env.PUBLIC_URL + "/"} component={Fighters} />
         </Route>
         <Route path="/arena" component={Arena} />
       </Router>
