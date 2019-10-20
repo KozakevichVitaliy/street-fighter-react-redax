@@ -1,34 +1,31 @@
 import React from 'react';
 
-// import reducers from "../../reducers";
-// import { fetchFighterById } from "../../actions";
-// import { getFighter } from "../../selectors";
-
-// const initialState = {};
-
-
 const  Dialog = ({closeModal, that, fighter}) => {
     return (
       <div className="fighter-info">
-          <h1>{fighter.name || "default"}</h1>
-          <hr />
-          <div className="fighter-stats">
-            <div className="values">
-              <div>
-                <span>Health</span>
-                <span>{fighter.health || "default"}</span>
-              </div>
-              <div>
-                <span>Attack</span>
-                <span>{fighter.attack || "default"}</span>
-              </div>
-              <div>
-                <span>Defence</span>
-                <span>{fighter.defense || "default"}</span>
-              </div>
+        <div className="name">
+          <h2>{fighter.name || "default"}</h2>
+        </div>
+        <span className="border"/>
+        <div>
+          <div className="values">
+            <div className="stats">
+              <span>Health:</span>
+              <span>{fighter.health || "default"}</span>
+            </div>
+            <div className="stats">
+              <span>Attack:</span>
+              <span>{fighter.attack || "default"}</span>
+            </div>
+            <div className="stats">
+              <span>Defence:</span>
+              <span>{fighter.defense || "default"}</span>
             </div>
           </div>
-          <button  onClick={() => closeModal(that)}>Choose {fighter.name}</button>
+        </div>
+        <div className="fighterBtnBlock">
+          <button className="fighterBtn"  onClick={() => closeModal(that)}>Choose {fighter.name}</button>
+        </div>
       </div>
     )
 };

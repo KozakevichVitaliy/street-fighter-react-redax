@@ -11,8 +11,8 @@ class Fighters extends Component {
   constructor(props) {
     super();
     this.state = {
-        visible : props.dialog,
-        arenaControl: []
+      isOpen : props.visible,
+      arenaControl: []
     }
   }
   componentDidMount() {
@@ -21,13 +21,13 @@ class Fighters extends Component {
   openModal(that, fighterId, fetchFighterById) {
     fetchFighterById(fighterId);
     that.setState({
-        visible : !that.state.dialog
+      isOpen : !that.state.visible
     });
   }
 
   closeModal(that) {
     that.setState({
-        visible : that.state.dialog
+      isOpen : that.state.visible
     });
   }
 
@@ -53,9 +53,6 @@ class Fighters extends Component {
   renderFighter(getFighterById, openModal, fighter) {
     const that = this;
     return (
-      // index as a key is an anti-pattern espessialy when you have stable IDs
-      // https://reactjs.org/docs/lists-and-keys.html
-      
       <div className="fighter" key={fighter._id}>
         <img
           className="fighter-image"
@@ -91,8 +88,8 @@ class Fighters extends Component {
         <div className="fighters">
           {fighters.map(this.renderFighter.bind(this, getFighterById, this.openModal))}
           <Modal 
-            visible={this.state.visible} 
-            width="400" height="300" 
+            visible={this.state.isOpen} 
+            width="230" height="180" 
             effect="fadeInUp" 
             onClickAway={() => this.closeModal(that)}
           >
@@ -111,7 +108,7 @@ class Fighters extends Component {
 const mapStateToProps = state => ({
   fighters: getFighters(state),
   fighter: getFighter(state),
-  dialog: state.dialogFighter.isOpen
+  visible: state.dialogFighter.isOpen
 });
 
 const mapDispatchToProps = {
