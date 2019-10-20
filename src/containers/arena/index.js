@@ -83,11 +83,11 @@ class Arena extends Component {
     }
     if (that.state.fighter1Health <= 0) {
       that.setState({
-        isOpen: !that.state.isOpen 
+        isOpen: !that.state.isOpen
       })
     } else if (that.state.fighter2Health <= 0) {
       that.setState({
-        isOpen: !that.state.isOpen 
+        isOpen: !that.state.isOpen
       })
     }
 	}

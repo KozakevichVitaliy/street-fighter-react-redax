@@ -1,10 +1,10 @@
 
-This is my simple realization of the legendary game "Street Fighter".
+  This is my simple realization of the legendary game "Street Fighter".
 
-On the main page you can see fighters and the disabled "Start Fight" button.
+  On the main page you can see fighters and the disabled "Start Fight" button.
 When you click on any  the "Fighter info" button you will see the modal window with fighter characteristics and the  "Choose [fighter] " button.
 If you click "Choose [fighter]" the fighter will be choosed, but if you click on overlay you will just close the modal.
-When you choose 2 fighters the "Start Fight" button will be enabled. 
+  When you choose 2 fighters the "Start Fight" button will be enabled. 
 If you want to choose 3-d fighter you will see alert with warning message
 Click "Start Fight" and enjoy with fight between two choosed fighters just clicking on the "Punch" buttons one by one.
 When any fighter health equalize 0 you will see the modal with winner
