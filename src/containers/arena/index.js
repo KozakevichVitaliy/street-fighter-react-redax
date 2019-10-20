@@ -21,7 +21,7 @@ class Arena extends Component {
   fight(fighter1, fighter2, that, health, index) {
 		const hitPowerFighter1 = that.getHitPower(fighter1);
 		const blockPowerFighter2 = that.getBlockPower(fighter2);
-		let result;
+    let result;
 		if (hitPowerFighter1 <= blockPowerFighter2) {
       result = 0;
       if (index === 0) {
@@ -57,15 +57,6 @@ class Arena extends Component {
         }, 3000);
       }
 		}
-		if (that.state.fighter1Health <= 0) {
-      that.setState({
-        isOpen: !that.state.isOpen 
-      })
-    } else if (that.state.fighter2Health <= 0) {
-      that.setState({
-        isOpen: !that.state.isOpen 
-      })
-    }
     if (index === 0) {
       that.punch1Btn.disabled = true;
       that.punch2Btn.disabled = false;
@@ -90,7 +81,15 @@ class Arena extends Component {
         })
       }, 2700);
     }
-    
+    if (that.state.fighter1Health <= 0) {
+      that.setState({
+        isOpen: !that.state.isOpen 
+      })
+    } else if (that.state.fighter2Health <= 0) {
+      that.setState({
+        isOpen: !that.state.isOpen 
+      })
+    }
 	}
   getHitPower(fighter, min = 1, max = 2) {
 		const criticalHitChance = Math.floor(min + Math.random() * (max + 1 - min));
