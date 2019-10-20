@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b53fcd10ecca903758a2f6b142250aa6",
+    "revision": "991f4cd7278dc6689b27f69a947edc9f",
     "url": "/street-fighter-react-redax/index.html"
   },
   {
-    "revision": "523cbe2c119a5270032e",
+    "revision": "c35b1253b8f6ff7bf680",
     "url": "/street-fighter-react-redax/static/css/main.f1ea2315.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/street-fighter-react-redax/static/js/2.996d323e.chunk.js"
   },
   {
-    "revision": "523cbe2c119a5270032e",
-    "url": "/street-fighter-react-redax/static/js/main.93ed8c4d.chunk.js"
+    "revision": "c35b1253b8f6ff7bf680",
+    "url": "/street-fighter-react-redax/static/js/main.9767b3a4.chunk.js"
   },
   {
     "revision": "6c4bc4e18dc9d3e0a34d",
