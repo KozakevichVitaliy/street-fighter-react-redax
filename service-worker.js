@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/street-fighter-react-redax/precache-manifest.f78e3b6015f68dbda5a007de06c3d06a.js"
+  "/street-fighter-react-redax/precache-manifest.53f0485d829074285ef9ae48db76466c.js"
 );
 
 self.addEventListener('message', (event) => {
