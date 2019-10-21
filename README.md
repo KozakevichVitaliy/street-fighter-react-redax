@@ -10,6 +10,7 @@ Click "Start Fight" and enjoy with fight between two choosed fighters just click
 When any fighter health equalize 0 you will see the modal with winner
 
 If want to start the game on your local machine, you should download this repo, then open command line in the project folder,  and just use two commands:
+
 First
 ### `npm install` 
   It will install all npm packages, then use
