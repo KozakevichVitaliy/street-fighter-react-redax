@@ -1,22 +1,16 @@
 {
   "files": {
-    "main.css": "/street-fighter-react-redax/static/css/main.f1ea2315.chunk.css",
-    "main.js": "/street-fighter-react-redax/static/js/main.9767b3a4.chunk.js",
-    "main.js.map": "/street-fighter-react-redax/static/js/main.9767b3a4.chunk.js.map",
-    "runtime-main.js": "/street-fighter-react-redax/static/js/runtime-main.b14677b1.js",
-    "runtime-main.js.map": "/street-fighter-react-redax/static/js/runtime-main.b14677b1.js.map",
-    "static/js/2.996d323e.chunk.js": "/street-fighter-react-redax/static/js/2.996d323e.chunk.js",
-    "static/js/2.996d323e.chunk.js.map": "/street-fighter-react-redax/static/js/2.996d323e.chunk.js.map",
-    "index.html": "/street-fighter-react-redax/index.html",
-    "precache-manifest.13ac235380aaf30522c8dc4469286b3b.js": "/street-fighter-react-redax/precache-manifest.13ac235380aaf30522c8dc4469286b3b.js",
-    "service-worker.js": "/street-fighter-react-redax/service-worker.js",
-    "static/css/main.f1ea2315.chunk.css.map": "/street-fighter-react-redax/static/css/main.f1ea2315.chunk.css.map",
-    "static/media/App.css": "/street-fighter-react-redax/static/media/layout.5b643999.jpg"
-  },
-  "entrypoints": [
-    "static/js/runtime-main.b14677b1.js",
-    "static/js/2.996d323e.chunk.js",
-    "static/css/main.f1ea2315.chunk.css",
-    "static/js/main.9767b3a4.chunk.js"
-  ]
+    "main.css": "/street-fighter-react-redux/static/css/main.2b16aa6d.chunk.css",
+    "main.js": "/street-fighter-react-redux/static/js/main.e04e1ff6.chunk.js",
+    "main.js.map": "/street-fighter-react-redux/static/js/main.e04e1ff6.chunk.js.map",
+    "runtime-main.js": "/street-fighter-react-redux/static/js/runtime-main.25e75b89.js",
+    "runtime-main.js.map": "/street-fighter-react-redux/static/js/runtime-main.25e75b89.js.map",
+    "static/js/2.e3f72fde.chunk.js": "/street-fighter-react-redux/static/js/2.e3f72fde.chunk.js",
+    "static/js/2.e3f72fde.chunk.js.map": "/street-fighter-react-redux/static/js/2.e3f72fde.chunk.js.map",
+    "index.html": "/street-fighter-react-redux/index.html",
+    "precache-manifest.3b87e378382b7936c716ae50177717ee.js": "/street-fighter-react-redux/precache-manifest.3b87e378382b7936c716ae50177717ee.js",
+    "service-worker.js": "/street-fighter-react-redux/service-worker.js",
+    "static/css/main.2b16aa6d.chunk.css.map": "/street-fighter-react-redux/static/css/main.2b16aa6d.chunk.css.map",
+    "static/media/App.css": "/street-fighter-react-redux/static/media/layout.5b643999.jpg"
+  }
 }
