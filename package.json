@@ -1,7 +1,7 @@
 {
-  "name": "street-fighter-react-redax",
+  "name": "street-fighter-react-redux",
   "version": "0.1.0",
-  "homepage": "https://kozakevichvitaliy.github.io/street-fighter-react-redax/",
+  "homepage": "https://kozakevichvitaliy.github.io/street-fighter-react-redux/",
   "private": true,
   "dependencies": {
     "classnames": "^2.2.5",
