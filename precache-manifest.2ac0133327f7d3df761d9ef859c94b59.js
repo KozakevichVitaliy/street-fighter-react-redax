@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6f556646b56c2f3e99955238331588b2",
+    "revision": "cbee7c55282f634a4b797c071931121b",
     "url": "/street-fighter-react-redux/index.html"
   },
   {
-    "revision": "8ab787577d09280ceb98",
+    "revision": "85f0108cb8d3614e9886",
     "url": "/street-fighter-react-redux/static/css/main.2b16aa6d.chunk.css"
   },
   {
-    "revision": "0c03d1146456ed0e6f49",
-    "url": "/street-fighter-react-redux/static/js/2.e3f72fde.chunk.js"
+    "revision": "9788d71681c879f86398",
+    "url": "/street-fighter-react-redux/static/js/2.2b44620f.chunk.js"
   },
   {
-    "revision": "8ab787577d09280ceb98",
-    "url": "/street-fighter-react-redux/static/js/main.e04e1ff6.chunk.js"
+    "revision": "85f0108cb8d3614e9886",
+    "url": "/street-fighter-react-redux/static/js/main.e264317d.chunk.js"
   },
   {
-    "revision": "77f9f95bb24944b2848a",
-    "url": "/street-fighter-react-redux/static/js/runtime-main.25e75b89.js"
+    "revision": "0776aba30f3d18b84367",
+    "url": "/street-fighter-react-redux/static/js/runtime-main.ee763b8b.js"
   },
   {
     "revision": "a19ffa63831b04cbf5502bf8be17b9b2",
