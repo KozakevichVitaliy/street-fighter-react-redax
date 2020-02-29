@@ -1,5 +1,5 @@
 const API_URL =
-  'http://www.mocky.io/v2/';
+  'https://www.mocky.io/v2/';
 
 export const callApi = (endpoind, method) => {
   const url = API_URL + endpoind;
